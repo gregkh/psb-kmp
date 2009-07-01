@@ -522,6 +522,18 @@ EXPORT_SYMBOL(drm_disable_unused_functions);
 void drm_mode_probed_add(struct drm_output *output,
 			 struct drm_display_mode *mode)
 {
+	if (!output) {
+		printk(KERN_ERR "ERROR: output is NULL\n");
+		WARN_ON(!output);
+		return;
+	}
+	if (!mode) {
+		printk(KERN_ERR "ERROR: mode is NULL\n");
+		WARN_ON(!mode);
+		return;
+	}
+
+	printk(KERN_ERR "PSB: Adding mode\n");
 	list_add(&mode->head, &output->probed_modes);
 }
 EXPORT_SYMBOL(drm_mode_probed_add);
