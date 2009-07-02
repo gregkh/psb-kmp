@@ -220,6 +220,16 @@ includes::
 
 endif
 
+DATE:=$(shell date +%m%d%Y)
+NAME:=psb-kmp
+RELEASE:=$(NAME)-$(DATE)
+release:
+	@ echo "Date = $(DATE)"
+	- rm -f $(RELEASE).tar.gz
+	git archive --format=tar --prefix=$(RELEASE)/ HEAD | gzip -9v > $(RELEASE).tar.gz
+
+.PHONY: release
+
 clean cleandir:
 	rm -rf $(CLEANFILES)
 
