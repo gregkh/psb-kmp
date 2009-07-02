@@ -5,3 +5,4 @@
 *.order
 Module.markers
 Module.symvers
+*.tar.gz
