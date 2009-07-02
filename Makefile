@@ -97,7 +97,7 @@ XGIHEADERS = xgi_cmdlist.h xgi_drv.h xgi_misc.h xgi_regs.h $(DRMHEADERS)
 
 PROGS = dristat drmstat
 
-CLEANFILES = *.o *.ko $(PROGS) .depend .*.flags .*.d .*.cmd *.mod.c .tmp_versions
+CLEANFILES = *.o *.ko $(PROGS) .depend .*.flags .*.d .*.cmd *.mod.c .tmp_versions modules.order *.symvers
 
 # VERSION is not defined from the initial invocation.  It is defined when
 # this Makefile is invoked from the kernel's root Makefile.
